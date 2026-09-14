@@ -1,0 +1,32 @@
+<div>
+    <h1>Deportes component</h1>
+    @if (sports.length > 4){
+        <h2 style="color:green">
+            Tenemos más de 4 deportes: {{sports.length}}
+        </h2>
+    }@else{
+        <h2 style="color:red">Menos de 4 deportes</h2>
+    }
+    <h2 style="color:brown" *ngIf="sports.length > 4">
+        Directiva ngIf con mas de 4 deportes: {{sports.length}}
+    </h2>
+    <h2 *ngIf="sports.length > 4; then condiciontrue; else condicionfalse">
+        Directiva ngIf con mas de 4 deportes: {{sports.length}}
+    </h2>    
+    <ng-template #condiciontrue>
+        <p style="background-color: lightgreen;">
+            Soy true
+        </p>
+    </ng-template>    
+    <ng-template #condicionfalse>
+        <p style="background-color: yellow;">
+            Soy false
+        </p>
+    </ng-template>
+    @for (deporte of sports; track deporte; let i = $index){
+        <h3 style="color:blue">{{i}} - {{deporte}}</h3>
+    }@empty{
+        <h1 style="color:red">Sin elementos</h1>
+    }
+    <h2 style="color:red" *ngFor="let sport of sports">{{sport}}</h2>
+</div>
