@@ -1,5 +1,27 @@
 <div>
+    <ng-template #plantilla>
+        <h2 style="background-color: red;color:white">
+            directiva template
+        </h2>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="plantilla"></ng-container>
     <h1>Deportes component</h1>
+    <ul>
+        @for (num of numeros; track num){
+            <li [class.par]="num % 2 == 0"
+            [class.impar]="num % 2 == 1"
+            >{{num}}</li>
+        }
+    </ul>
+    <ul>
+        @for (num of numeros; track num){
+            <li [ngClass]="{
+                par: num % 2 ==0,
+                impar: num % 2 == 1
+            }"
+            >{{num}}</li>
+        }
+    </ul>    
     @if (sports.length > 4){
         <h2 style="color:green">
             Tenemos más de 4 deportes: {{sports.length}}
@@ -18,9 +40,10 @@
             Soy true
         </p>
     </ng-template>    
+  
     <ng-template #condicionfalse>
         <p style="background-color: yellow;">
-            Soy false
+            Soy false 
         </p>
     </ng-template>
     @for (deporte of sports; track deporte; let i = $index){
