@@ -8,6 +8,7 @@ import { DeportesComponent } from './components/deportescomponent/deportes.compo
 import { FormsBinding } from './components/formsbinding/forms.binding';
 import { FormsObjectModel } from './components/formsobjectmodel/forms.object.model';
 import { Testcomponent } from './components/testcomponent/testcomponent';
+import { Tablamultiplicar } from './components/tablamultiplicar/tablamultiplicar';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Testcomponent } from './components/testcomponent/testcomponent';
     FormsBinding,
     FormsObjectModel,
     Testcomponent,
+    Tablamultiplicar,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
