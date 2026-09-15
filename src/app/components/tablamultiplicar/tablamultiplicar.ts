@@ -18,6 +18,7 @@ export class Tablamultiplicar {
 
   mostrarTabla(): void {
     this.numero = parseInt(this.cajaNumero.nativeElement.value);
+    console.log(this.numero)
     let aux = new Array<number>();
     for (let i = 1; i <= 10; i++){
       var op = this.numero * i;
